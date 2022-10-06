@@ -22,7 +22,7 @@ public class WorkTest_04 {
 
             Patient patient = new Patient(random.nextInt(10), random.nextInt(1000), "一");
             if (!map.containsValue(patient) && !map.containsKey(patient.getId())) {
-                map.put(patient.getId(), patient);
+                map.put(patient.getId_Card(), patient);
             }
         }
 
@@ -34,6 +34,7 @@ public class WorkTest_04 {
                 return o1.getKey() - o2.getKey();
             }
         });
+//        System.out.println(list);
         for (Map.Entry<Integer, Patient> patient :
                 list) {
             System.out.println(patient);
