@@ -16,7 +16,6 @@ public class WorkTest_02 {
              BufferedReader bufferedReader = new BufferedReader(fileReader);
         ) {
             String read = "";
-            char[] chars = new char[1024];
             while ((read = bufferedReader.readLine()) != null) {
                 set.add(Integer.valueOf(read));
             }
