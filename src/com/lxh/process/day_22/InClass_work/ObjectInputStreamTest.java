@@ -1,8 +1,6 @@
-package com.lxh.process.day_22.work;
+package com.lxh.process.day_22.InClass_work;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 
 /**
