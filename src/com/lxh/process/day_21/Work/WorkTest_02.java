@@ -24,7 +24,7 @@ public class WorkTest_02 {
         }
 
         ArrayList<Integer> list = new ArrayList<>(set);
-        Collections.sort(list, new Comparator<Integer>() {
+        list.sort(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return o2 - o1;
