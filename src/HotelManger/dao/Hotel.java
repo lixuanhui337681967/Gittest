@@ -37,21 +37,18 @@ public class Hotel extends Room {
         }
         while (iterator.hasNext()) {
             Room room = iterator.next();
-
             if (room.getRoom_id() == inputId) {
                 if (room.isStatus() && "预定".equals(status)) {
                     System.out.println("房间已被订阅");
-                }
-                if (room.isStatus() && "退订".equals(status)) {
-                    room.setStatus(false);
-                    System.out.println("房间退订成功");
-                }
-                if (!room.isStatus() && "预定".equals(status)) {
+                } else if (!room.isStatus() && "预定".equals(status)) {
                     room.setStatus(true);
                     System.out.println("房间预定成功");
                     System.out.println("您预定的房间为" + room.getRoom_layer() + "层的" + room.getRoom_id() + "号");
                 }
-                if (!room.isStatus() && "退订".equals(status)) {
+                if (room.isStatus() && "退订".equals(status)) {
+                    room.setStatus(false);
+                    System.out.println("房间退订成功");
+                }else if (!room.isStatus() && "退订".equals(status)) {
                     System.out.println("房间没有被订阅");
                 }
                 break;

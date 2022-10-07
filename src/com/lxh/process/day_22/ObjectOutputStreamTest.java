@@ -12,16 +12,16 @@ import java.util.ArrayList;
  */
 public class ObjectOutputStreamTest {
     public static void main(String[] args) {
-//        ArrayList<User> list = new ArrayList<>();
-        User user = new User("张三", "zhangsan1");
-//        list.add(new User("张一", "zhangyi"));
-//        list.add(new User("张二", "zhanger"));
-//        list.add(new User("张三", "zhangsan"));
+        ArrayList<User> list = new ArrayList<>();
+//        User user = new User("张三", "zhangsan1");
+        list.add(new User("张一", "zhangyi"));
+        list.add(new User("张二", "zhanger"));
+        list.add(new User("张三", "zhangsan"));
 
         try (FileOutputStream fileOutputStream = new FileOutputStream("./src/com/lxh/process/day_22/user");
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);)
             {
-                objectOutputStream.writeObject(user);
+                objectOutputStream.writeObject(list);
             } catch (IOException e) {
             e.printStackTrace();
         }

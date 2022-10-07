@@ -1,8 +1,11 @@
 package HotelManger;
 
+import HotelManger.Stream.InStream;
+import HotelManger.Stream.OutStream;
 import HotelManger.dao.Hotel;
 import HotelManger.dao.Room;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,7 +18,13 @@ import java.util.Scanner;
 public class clint {
     public static void main(String[] args) {
         System.out.println("欢迎使用本酒店管理系统，本系统可以实现预定房间、退订房间的功能，请根据需求来进行选择");
-        ArrayList<Room> rooms = Room.newRoom();
+        File file = new File("./src/HotelManger/temp/a");
+        ArrayList<Room> rooms = new ArrayList<Room>();
+        if (file.isFile()){
+             rooms = InStream.inRoom();
+        } else {
+            rooms = Room.newRoom();
+        }
         Scanner input = new Scanner(System.in);
         Hotel.allRoom(rooms);
         while (true) {
@@ -38,6 +47,7 @@ public class clint {
                     Hotel.allRoom(rooms);
                     break;
                 case "5":
+                    OutStream.outRoom(rooms);
                     System.out.println("提示：退出成功！");
                     return;
                 default:

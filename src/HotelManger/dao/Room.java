@@ -1,5 +1,6 @@
 package HotelManger.dao;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -7,7 +8,8 @@ import java.util.ArrayList;
  * @date 2022年 09月30日 15:49:48
  * 房间类
  */
-public class Room {
+public class Room implements Serializable {
+    private static final long serialVersionUID = 1L;
     //    房间id
     private int room_id;
     //    房间层数
