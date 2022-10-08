@@ -20,7 +20,7 @@ public class clint {
         System.out.println("欢迎使用本酒店管理系统，本系统可以实现预定房间、退订房间的功能，请根据需求来进行选择");
         File file = new File("./src/HotelManger/temp/a");
         ArrayList<Room> rooms = new ArrayList<Room>();
-        if (file.isFile()){
+        if (file.exists()){
              rooms = InStream.inRoom();
         } else {
             rooms = Room.newRoom();
@@ -34,10 +34,12 @@ public class clint {
             switch (num) {
                 case "1":
                     Hotel.orderOrExitRooms(rooms,"预定");
+                    OutStream.outRoom(rooms);
                     Hotel.allRoom(rooms);
                     break;
                 case "2":
                     Hotel.orderOrExitRooms(rooms,"退订");
+                    OutStream.outRoom(rooms);
                     Hotel.allRoom(rooms);
                     break;
                 case "3":

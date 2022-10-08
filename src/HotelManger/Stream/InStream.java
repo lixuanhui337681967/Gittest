@@ -13,8 +13,8 @@ import java.util.ArrayList;
  * 序列化
  */
 public class InStream {
-    public static ArrayList inRoom(){
-        ArrayList o = new ArrayList();
+    public static ArrayList<Room> inRoom(){
+        ArrayList<Room> o = new ArrayList<>();
         try (FileInputStream fileInputStream = new FileInputStream("./src/HotelManger/temp/a");
              ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);)
         {
