@@ -1,0 +1,184 @@
+package com.lxh.process.day_21;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+/**
+ * @author lixuanhui
+ * @date 2022年 10月06日 11:31:00
+ */
+public class InputStream_01 {
+    public static void main(String[] args) throws IOException {
+        try (FileInputStream fileInputStream = new FileInputStream("./src/com/lxh/process/day_21/1006IO.md")){
+            int read = 0;
+//        while ((read = fileInputStream.read()) != -1) {
+//            System.out.print((char)read);
+//        }
+
+            byte[] bytes = new byte[1024];
+            while ((read = fileInputStream.read(bytes)) != -1) {
+                System.out.println(new String(bytes,0,read));
+                System.out.println(read);
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+package com.lxh.process.day_21;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/**
+ * @author lixuanhui
+ * @date 2022年 10月06日 15:06:33
+ */
+public class OutputStream_01 {
+    public static void main(String[] args) {
+        try(FileOutputStream fileOutputStream = new FileOutputStream("D:/outputStream.txt",false)) {
+//            fileOutputStream.write(97);
+//            fileOutputStream.write(98);
+//            fileOutputStream.write(99);
+//            fileOutputStream.write(100);
+            String str = "abdefg";
+            byte[] bytes = str.getBytes();
+            fileOutputStream.write(bytes);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+package com.lxh.process.day_21;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+/**
+ * @author lixuanhui
+ * @date 2022年 10月06日 14:38:30
+ */
+public class Reader_01 {
+    public static void main(String[] args) {
+        try (FileReader fileReader = new FileReader("./src/com/lxh/process/day_21/1006IO.md")){
+            int read = 0;
+            char[] chars = new char[1024];
+            while ((read = fileReader.read(chars)) != -1){
+                System.out.println(new String(chars,0,read));
+                System.out.println(read);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+package com.lxh.process.day_21.Work;
+
+import java.io.*;
+/**
+ * @author lixuanhui
+ * @date 2022年 10月06日 16:31:24
+ */
+public class WorkTest_01 {
+    public static void main(String[] args) {
+        try (FileInputStream fileInputStream = new FileInputStream("./src/com/lxh/process/day_21/Work/input.zip");
+             BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+             FileOutputStream fileOutputStream = new FileOutputStream("./src/com/lxh/process/day_21/Work/output.zip");
+             BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+        ) {
+            int read = 0;
+            byte[] bytes = new byte[1024];
+            while ((read = bufferedInputStream.read(bytes)) != -1) {
+                bufferedOutputStream.write(bytes, 0, read);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+package com.lxh.process.day_21.Work;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+
+/**
+ * @author lixuanhui
+ * @date 2022年 10月06日 16:31:32
+ */
+public class WorkTest_02 {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<Integer>();
+        try (FileReader fileReader = new FileReader("./src/com/lxh/process/day_21/work/input.txt");
+             BufferedReader bufferedReader = new BufferedReader(fileReader);
+        ) {
+            String read = "";
+            while ((read = bufferedReader.readLine()) != null) {
+                set.add(Integer.valueOf(read));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<Integer> list = new ArrayList<>(set);
+        list.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+        System.out.println("去重后还有" + list.size() + "行" + "\n" + "分别是" + list);
+
+    }
+}
+package com.lxh.process.day_21;
+
+import java.io.*;
+
+/**
+ * @author lixuanhui
+ * @date 2022年 10月06日 15:23:03
+ */
+public class Writer_01 {
+    public static void main(String[] args) {
+        String s = "";
+        long start = System.currentTimeMillis();
+        try (FileReader fileReader = new FileReader("./src/com/lxh/process/day_21/1006IO.md");
+             BufferedReader bufferedReader = new BufferedReader(fileReader);
+        ) {
+            int read = 0;
+            char[] chars = new char[1024];
+            while ((read = bufferedReader.read(chars)) != -1) {
+                s = new String(chars, 0, read);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (FileWriter fileWriter = new FileWriter("./src/com/lxh/process/day_21/test.txt");
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        ) {
+            bufferedWriter.write(s.toCharArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        try (FileReader fileReader = new FileReader("./src/com/lxh/process/day_21/test.txt");
+             BufferedReader bufferedReader = new BufferedReader(fileReader);
+        ) {
+            int read = 0;
+            while ((read = bufferedReader.read()) != -1) {
+                System.out.print((char) read);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("使用了" + (end - start) + "毫秒");
+    }
+}
