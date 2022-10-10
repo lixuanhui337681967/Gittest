@@ -15,6 +15,7 @@ public class Recursion_copy01 {
         if (file.isFile()) {
             String absolutePath = file.getAbsolutePath();
             String newPath = absolutePath.substring(0,66) + "测试目录2" + absolutePath.substring(70);
+//            String newPath = "目标主路径"  + "切割后面的目标路径";
 
 //            String absolutePath = file.getAbsolutePath();
 //            String newPath = "E:/TianLiangJiaoYu/JavaSE/HelloWorld/src/com/lxh/process/day_23/" + "测试目录1" + absolutePath.substring(70);
