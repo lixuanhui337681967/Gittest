@@ -16,19 +16,20 @@ public class WorkTest_02 {
     public static void main(String[] args) {
         HashMap<Integer, Object> map = new HashMap<>();
         for (int i = 1; i <= 10; i++) {
-            map.put((12300 + i),new User(i,"一",10+i,"河北"));
+            map.put((12300 + i), new User(i, "一", 10 + i, "河北"));
         }
 //        手机号12300-12310
         getUser(map);
     }
-    public static void getUser(HashMap<Integer, Object> map){
+
+    public static void getUser(HashMap<Integer, Object> map) {
         Scanner scanner = new Scanner(System.in);
-        while (true){
+        while (true) {
             System.out.println("请输入电话号码：");
             String input = scanner.nextLine();
-            if (map.containsKey(Integer.parseInt(input))){
+            if (map.containsKey(Integer.parseInt(input))) {
                 System.out.println(map.get(Integer.parseInt(input)));
-            }else {
+            } else {
                 System.out.println("电话号码不存在");
             }
         }

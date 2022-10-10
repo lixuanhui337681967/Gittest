@@ -24,7 +24,7 @@ public class Test_02 {
         Collections.sort(list, new Comparator<Map.Entry<Character, Integer>>() {
             @Override
             public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
-                    return o2.getValue() - o1.getValue();
+                return o2.getValue() - o1.getValue();
             }
         });
         System.out.println("排序后为" + list);
