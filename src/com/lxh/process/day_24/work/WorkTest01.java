@@ -44,7 +44,7 @@ class Num {
     Random random = new Random();
 
     public synchronized void add1() {
-        if (i == 6) {
+        if (i == a.length) {
             this.notifyAll();
             System.out.println("数组为：" + Arrays.toString(a));
             setStatus(false);
@@ -64,7 +64,7 @@ class Num {
     }
 
     public synchronized void add2() {
-        if (i == 6) {
+        if (i == a.length) {
             this.notifyAll();
             System.out.println("数组为：" + Arrays.toString(a));
             setStatus(false);
