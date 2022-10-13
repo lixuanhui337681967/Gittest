@@ -15,7 +15,7 @@ public class Regex_Test {
         regex = "-?[1-9]+\\d*|0";
 
 
-//        非负整数
+////        非负整数
         regex = "0|([1-9]\\d*)";
 //        System.out.println("11".matches(regex));
         System.out.println("非负整数 ：" + "-0.1".matches(regex));
@@ -49,5 +49,8 @@ public class Regex_Test {
 //        由数字、26个英文字母组成的字符串
         regex = "[a-zA-Z0-9]+";
         System.out.println("由数字、26个英文字母组成的字符串 ：" + "-0.1".matches(regex));
+
+//        regex = "(^##\\w*).*(##).*";
+//        System.out.println("##X3zVpSP0S1uP1RY##我在快手极速版获得了22.66元，你也快来玩吧～".matches(regex));
     }
 }
