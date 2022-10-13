@@ -1,6 +1,6 @@
 ## Lambda表达式
 
-1. 特点：允许把函数作为一个方法的参数
+1. #### 特点：允许把函数作为一个方法的参数
 
 ```java
 package com.lxh.process.day_27;
@@ -50,3 +50,18 @@ class lam implements Lambda {
 }
 ```
 
+#### 语法特点：
+
+![image-20221013111303087](C:\Users\lixuanhui\AppData\Roaming\Typora\typora-user-images\image-20221013111303087.png)
+
+- 可选类名声明：
+- 可选的参数圆括号：
+- 可选的大括号：
+- 可选的返回关键字：
+
+![image-20221013113036891](C:\Users\lixuanhui\AppData\Roaming\Typora\typora-user-images\image-20221013113036891.png)
+
+#### 函数式接口
+
+- 其本质是有且只有一个抽象方法，但是可以有多个非抽象方法
+- 函数式接口都可以转换为Lambda表达式

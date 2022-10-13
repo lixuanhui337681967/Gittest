@@ -22,7 +22,10 @@ public class Lambda_01 {
 //    3.子实现类
 //        forEach(ints, new lam());
 //    4.Lambda
-        forEach(ints, i -> System.out.println("======" + i));
+        forEach(ints, i -> {
+            System.out.print("======" + i);
+            System.out.println("======" + i);
+        });
     }
 
     public static void forEach(int[] ints, Lambda lambda) {
@@ -33,6 +36,7 @@ public class Lambda_01 {
     }
 }
 
+@FunctionalInterface
 interface Lambda {
     void m1(int a);
 }
