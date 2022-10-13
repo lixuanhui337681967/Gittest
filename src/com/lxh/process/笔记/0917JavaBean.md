@@ -2,10 +2,9 @@
 
 #### JavaBean
 
-什么是JavaBean:
+什么是JavaBean：
 
-​	JavaBean是一种java语言写成的可重用的组件(类)。
-​			就是一种特殊类，遵循特定的规范，遵循的规范如下：
+​	JavaBean是一种java语言写成的可重用的组件(类)，就是一种特殊类，遵循特定的规范，遵循的规范如下：
 
 - 必须使用public修饰(JavaBean)类
 - (JavaBean)类必须有公共的无参构造器
