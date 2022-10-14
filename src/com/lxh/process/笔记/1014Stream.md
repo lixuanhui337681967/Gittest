@@ -58,13 +58,13 @@
    chars.forEach(x -> System.out.println((char)x));
    ```
 
-#### 常用转换算子
+#### 常用转换算子（中间算子）
 
 ###### 迭代器、matcher、stream再次调用需要重新创建，否则报错
 
 常用转换算子：filter，distinct，map，limit,skip,flatMap等
 
-```
+```java
 List<Integer> list = new ArrayList<>();
 list.add(3);
 list.add(1);
