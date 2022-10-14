@@ -52,14 +52,10 @@ class lam implements Lambda {
 
 #### 语法特点：
 
-![image-20221013111303087](C:\Users\lixuanhui\AppData\Roaming\Typora\typora-user-images\image-20221013111303087.png)
-
-- 可选类名声明：
-- 可选的参数圆括号：
-- 可选的大括号：
-- 可选的返回关键字：
-
-![image-20221013113036891](C:\Users\lixuanhui\AppData\Roaming\Typora\typora-user-images\image-20221013113036891.png)
+- 可选类名声明
+- 可选的参数圆括号
+- 可选的大括号
+- 可选的返回关键字
 
 #### 函数式接口
 
