@@ -18,7 +18,7 @@ class ProduceTest extends Thread {
     Factory factory;
     int count = 0;
 
-    public ProduceTest() {
+    private ProduceTest() {
     }
 
     public ProduceTest(Factory factory) {
@@ -37,7 +37,7 @@ class ProduceTest extends Thread {
 class ConsumeTest implements Runnable {
     Factory factory;
 
-    public ConsumeTest() {
+    private ConsumeTest() {
     }
 
     public ConsumeTest(Factory factory) {
