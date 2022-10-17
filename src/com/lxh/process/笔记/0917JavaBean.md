@@ -8,7 +8,7 @@
 
 - 必须使用public修饰(JavaBean)类
 - (JavaBean)类必须有公共的无参构造器
-- 对于所有的成员变量都需要有相应的操作受到(Getter/Setter)
+- 对于所有的成员变量都需要有相应的创建方法(Getter/Setter)
 
 #### 空指针中静态变量的调用：
 
