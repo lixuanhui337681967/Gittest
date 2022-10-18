@@ -1,0 +1,33 @@
+## 1.创建用户pretty，密码是123456789
+CREATE USER `pretty`@`localhost` IDENTIFIED BY `123456789`;
+## 2.授予student表的所有权限
+GRANT ALL ON  student.* TO `pretty`@`%` IDENTIFIED BY `123456789`;
+REVOKE ALL ON student.* FROM `pretty`@`%`;
+
+
+##创建并登录test_01用户给所有权限
+CREATE USER `test_01`@`localhost` IDENTIFIED BY `123456`;
+GRANT ALL ON  test_01.* TO `test_01`@`%` IDENTIFIED BY `123456`;
+##创建test_01数据库
+CREATE DATABASE IF NOT EXISTS `test_01`;
+##在test_01数据库下创建t_student表,表中有 id,name,sex,course,score
+CREATE TABLE if not exists `t_student`(
+  `id` INT(20) DEFAULT NULL,
+  `name` VARCHAR(5) DEFAULT NULL,
+  `sex` varchar(3) DEFAULT NULL,
+  `course` varchar(20) DEFAULT NULL,
+	`score` DOUBLE(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+##向t_student表中插入3条数据，一一对应为	张三 男 javaSE 99	李四 女 javaWEB 98	王五 男 javEE 99.5
+INSERT into t_student (id,name,sex,course,score) VALUES (1,'张三','男','javaSE',99);
+INSERT into t_student (id,name,sex,course,score) VALUES (2,'李四','女','javaWEB',98);
+INSERT into t_student (id,name,sex,course,score) VALUES (3,'王五','男','javaEE',99.5);
+##把 course为javaEE的分数 更改为100	把 张三的性别更改为 女	把 王五删除
+update t_student set score=100 where course='javaEE';
+update t_student set sex='女' where name='张三';
+delete from t_student where name='王五';
+
+##把t_student表删除	把test_01数据库删除	把 test01用户删除(然后登录root用户)
+drop table t_student;
+DROP DATABASE test_01;
+drop user 'test_01'@'%';
