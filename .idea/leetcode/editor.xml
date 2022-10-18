@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/AddTwoNumbers.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/doc/content/AddTwoNumbers.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/AddTwoNumbers.java" />
+              <option name="titleSlug" value="add-two-numbers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/CountSpecialQuadruplets.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/doc/content/CountSpecialQuadruplets.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1995" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/CountSpecialQuadruplets.java" />
+              <option name="titleSlug" value="count-special-quadruplets" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/TwoSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/doc/content/TwoSum.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../leetcode/leetcode/src/leetcode/editor/cn/TwoSum.java" />
+              <option name="titleSlug" value="two-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
