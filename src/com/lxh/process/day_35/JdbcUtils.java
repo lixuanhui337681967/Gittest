@@ -2,7 +2,7 @@ package com.lxh.process.day_35;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
+import java.util.Properties;
 
 /**
  * @author lixuanhui
@@ -15,7 +15,13 @@ public class JdbcUtils {
 //        1.注册驱动（仅仅做一次）
             Class.forName("com.mysql.cj.jdbc.Driver");
 //        2.建立连接数据库
-            return  DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/student", "root", "123456");
+            Properties properties = new Properties();
+            properties.load(JdbcUtils.class.getClassLoader().getResourceAsStream("jdbc.properties"));
+            String url = properties.getProperty("url");
+            String username = properties.getProperty("username");
+            String password = properties.getProperty("password");
+            return  DriverManager.getConnection(url, username, password);
+//            return  DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/student", "root", "123456");
         } catch (Exception e) {
             e.printStackTrace();
         }
