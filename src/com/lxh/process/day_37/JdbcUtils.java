@@ -15,7 +15,7 @@ public class JdbcUtils {
         try {
 //            注册驱动
             Class.forName("com.mysql.cj.jdbc.Driver");
-//            创建链接
+//            创建连接
             Properties properties = new Properties();
             properties.load(JdbcUtils.class.getClassLoader().getResourceAsStream("jdbc.properties"));
             String url = properties.getProperty("url");
