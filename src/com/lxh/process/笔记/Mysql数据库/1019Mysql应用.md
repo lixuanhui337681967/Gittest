@@ -38,9 +38,7 @@
       ALTER TABLE temp ADD UNIQUE
       ```
 
-      
-
-   2. notnull和默认值（modify）not null 和 default ‘值’;
+   2. not null和默认值（modify）not null 和 default ‘值’;
 
    3. 主键 add
 
@@ -127,21 +125,21 @@
       - union all 不去重
 
 
-      ```mysql
-      -- 查询出 teacher_id = 1 的所有学生信息
-      SELECT * FROM student WHERE teacher_id = 1;
-      -- 查询出 学生分数大于60的所有学生信息
-      SELECT * FROM student WHERE score > 60;
-      -- 查询出 学生分数大于60 或 teacher_id = 1 的所有学生信息(去除重复)
-      SELECT * FROM student WHERE teacher_id=1 or score > 60;
-      SELECT * FROM student WHERE teacher_id=1 
-      UNION
-      SELECT * FROM student WHERE score > 60;
-      -- 查询出 学生分数大于60 或 teacher_id = 1 的所有学生信息(可重复)
-      SELECT * FROM student WHERE teacher_id=1 
-      UNION ALL
-      SELECT * FROM student WHERE score > 60;
-      ```
+```mysql
+  -- 查询出 teacher_id = 1 的所有学生信息
+  SELECT * FROM student WHERE teacher_id = 1;
+  -- 查询出 学生分数大于60的所有学生信息
+  SELECT * FROM student WHERE score > 60;
+  -- 查询出 学生分数大于60 或 teacher_id = 1 的所有学生信息(去除重复)
+  SELECT * FROM student WHERE teacher_id=1 or score > 60;
+  SELECT * FROM student WHERE teacher_id=1 
+  UNION
+  SELECT * FROM student WHERE score > 60;
+  -- 查询出 学生分数大于60 或 teacher_id = 1 的所有学生信息(可重复)
+  SELECT * FROM student WHERE teacher_id=1 
+  UNION ALL
+  SELECT * FROM student WHERE score > 60;
+```
 
 6. 常用函数
 

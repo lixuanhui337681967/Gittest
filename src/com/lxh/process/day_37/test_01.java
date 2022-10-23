@@ -1,4 +1,4 @@
-package com.lxh.process.day_35.work;
+package com.lxh.process.day_37;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,27 +6,22 @@ import java.sql.ResultSet;
 
 /**
  * @author lixuanhui
- * @date 2022年 10月21日 20:09:25
+ * @date 2022年 10月23日 09:19:07
  */
-public class SeletALL_06 {
+public class test_01 {
     public static void main(String[] args) {
-//        查询出所有的订单信息
-        selectAllOrder();
-    }
-    public static void selectAllOrder(){
         try {
+//        注册驱动+创建连接
             Connection connection = JdbcUtils.getConnection();
-            String sql = "select * from t_order";
+//        创建运行sql的对象
+            String sql = "select * from student";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+//
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                System.out.println("id = " + resultSet.getString("id")
-                        + ",订单号 = " + resultSet.getString("num")
-                        + ",收货地址 = " + resultSet.getString("addr")
-                        + ",收货人 = " + resultSet.getString("name")
-                        + ",收货人电话 = " + resultSet.getString("phone")
-                );
+                System.out.println(resultSet.getString("name"));
             }
+
             JdbcUtils.closeConnection(resultSet);
             JdbcUtils.closeConnection(preparedStatement);
             JdbcUtils.closeConnection(connection);
