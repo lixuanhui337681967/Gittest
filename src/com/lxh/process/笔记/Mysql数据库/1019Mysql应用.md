@@ -145,6 +145,8 @@
 
    - **contact**
    - **subString**
+   - **INET_ATON(IP) 函数——把ip转为无符号整型(4-8位)**
+   -  **INET_NTOA函数——把整型的ip转为字符串式的地址**
 
 
    ```mysql
