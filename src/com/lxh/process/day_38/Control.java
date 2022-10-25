@@ -48,7 +48,7 @@ public class Control {
                 if (temp > 255 || temp < 0) {
                     return false;
                 }
-            }else {
+            } else {
                 return false;
             }
         }
