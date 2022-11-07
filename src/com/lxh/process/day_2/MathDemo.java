@@ -3,7 +3,7 @@ package com.lxh.process.day_2;
 /**
  * @author lixuanhui
  * @date 2022年 09月06日 19:59:59
- * 练习2.docx 第一题
+ * 练习2.docx 第1题
  */
 public class MathDemo {
     public static void main(String[] args) {
